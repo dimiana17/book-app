@@ -1,4 +1,6 @@
 import 'package:book_app/core/utls/assets.dart';
+import 'package:book_app/features/splash_feature/presentation/views/widgets/sliding_text.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -19,11 +21,14 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
     animationController = AnimationController(vsync: this,duration: const Duration(seconds: 2));
     slidingAnimation=Tween<Offset>(begin:const Offset(0, 2) ,end: const Offset(0, 0)).animate(animationController);
     animationController.forward();
-    slidingAnimation.addListener(() { 
-      setState(() {});
-    });
-  }
 
+    
+  }
+@override
+  void dispose() {
+    animationController.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -32,18 +37,9 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
       children: [
         Image.asset(AssetsData.logo),
         const SizedBox(height: 4,),
-         SlideTransition(
-          position: slidingAnimation,
-          child: const Text(
-            'Read Free Books',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold
-            ),
-          ),
-        )
+         SlidingText(slidingAnimation: slidingAnimation)
       ],
     );
   }
 }
+
