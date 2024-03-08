@@ -1,3 +1,4 @@
+import 'package:book_app/core/styles.dart';
 import 'package:book_app/core/utls/assets.dart';
 import 'package:book_app/features/home/presentation/views/widgets/custom_app_bar.dart';
 import 'package:book_app/features/home/presentation/views/widgets/custom_list_view_item.dart';
@@ -10,11 +11,17 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        CustomAppBar(),
-        FeaturedBoxListView(),
-      ],
+    return const Padding(
+      padding: EdgeInsets.only(left: 24),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          CustomAppBar(),
+          FeaturedBoxListView(),
+          SizedBox(height: 50,),
+          Text("Best Seller",style: Styles.titleMediem,)
+        ],
+      ),
     );
   }
 }
