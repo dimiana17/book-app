@@ -25,7 +25,7 @@ class HomeViewBody extends StatelessWidget {
           ),
           Text(
             "Best Seller",
-            style: Styles.titleMediem,
+            style: Styles.textStyle18,
           ),
           BestSellerListViewItem(),
         ],
