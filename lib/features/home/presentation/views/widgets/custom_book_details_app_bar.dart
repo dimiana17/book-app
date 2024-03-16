@@ -1,8 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key});
+class CustomBookDetailsAppBar extends StatelessWidget {
+  const CustomBookDetailsAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {

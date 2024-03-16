@@ -11,7 +11,7 @@ class FeaturedListViewItem extends StatelessWidget {
       child: Container(
         //height: MediaQuery.of(context).size.height*.25,
         decoration: BoxDecoration(
-          color: Colors.amber,
+          color: const Color(0xFFFCBEA6),
           image: const DecorationImage(
             image: AssetImage(AssetsData.test),
             fit: BoxFit.fill,
