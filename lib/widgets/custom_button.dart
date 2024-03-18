@@ -2,11 +2,12 @@ import 'package:book_app/core/styles.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, required this.backgroungColor, required this.textColor, this.borderRedius, required this.text});
+  const CustomButton({super.key, required this.backgroungColor, required this.textColor, this.borderRedius, required this.text, this.fontSize});
     final Color backgroungColor;
     final Color textColor;
     final BorderRadius? borderRedius;
     final String text;
+    final double? fontSize;
   @override
   Widget build(BuildContext context) {
 
@@ -22,7 +23,8 @@ class CustomButton extends StatelessWidget {
           text,
           style: Styles.textStyle18.copyWith(
             color: textColor,
-            fontWeight: FontWeight.w900
+            fontWeight: FontWeight.w900,
+            fontSize: fontSize
           ),
         ),
       ),
